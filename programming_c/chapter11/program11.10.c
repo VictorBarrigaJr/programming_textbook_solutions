@@ -53,7 +53,7 @@ struct entry *find_entry(struct entry *list_ptr, int match)
 {
     while ( list_ptr != (struct entry *) 0 )
         if ( list_ptr->value == match )
-            return (list_ptr);
+    <        return (list_ptr);
         else
             list_ptr = list_ptr->next;
 
