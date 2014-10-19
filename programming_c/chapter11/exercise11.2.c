@@ -53,9 +53,10 @@ int main(void)
     }
     printf("done!\n");
 
-    // create new node
-    node n5;
-    n5.data = 500;
+    // create  a new node
+    node n5 = malloc(sizeof(node));
+    n5->data = 500;
+    n5->next = NULL;
 
     return 0;
 }
