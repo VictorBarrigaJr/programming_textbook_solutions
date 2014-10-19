@@ -27,13 +27,15 @@ typedef struct node
     struct node *next;
 }node;
 
+node *head = NULL;
+
 void insert_entry(struct node *entry);
 
 int main(void)
 {
     // linked list
     node n2, n4, n6;
-    node *list_pointer = &n2;
+    node *head = &n2;
 
     n2.data = 200;
     n2.next = &n4;
@@ -55,13 +57,32 @@ int main(void)
 
     // create  a new node
     node n5 = malloc(sizeof(node));
+    // initialize new node
     n5->data = 500;
     n5->next = NULL;
 
     return 0;
 }
 
-void insert_entry(struct node *entry)
+void insert_entry(struct node *new)
 {
-    
+    // traverse list with two pointers
+    node *prev = NULL;
+    node *cur;
+    for (cur = head; cur != NULL; cur = cur->next) 
+    {
+        prev = cur;
+    }
+
+    // if the list is empty, prepend
+    if (prev == NULL)
+    {
+        head = new;
+    }
+    // else add new node to end of the list
+    else
+    {
+        prev->next = new;
+    }
+
 }
