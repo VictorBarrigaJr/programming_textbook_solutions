@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 10
+//#define SIZE 10
 
 // structure for linked list - singly-linked
 typedef struct node
@@ -29,7 +29,7 @@ typedef struct node
 
 node *head = NULL;
 
-void insert_entry(struct node *entry);
+void insert_entry(node *list, struct node *entry);
 
 int main(void)
 {
@@ -48,23 +48,56 @@ int main(void)
 
     // print linked list
     printf("Printing linked list prior to new node insertion: \n");
-    while ( list_pointer != NULL )
+    while ( head != NULL )
     {
-        printf ("%i\n", list_pointer->data);
-        list_pointer = list_pointer->next;
+        printf ("%i\n", head->data);
+        head = head->next;
     }
     printf("done!\n");
 
+    head = &n2;
     // create  a new node
-    node n5 = malloc(sizeof(node));
+    node *n5 = malloc(sizeof(node));
     // initialize new node
     n5->data = 500;
     n5->next = NULL;
 
+    // insert new node
+    insert_entry(head, n5);
+
+    // print new linked list
+    printf("Printing linked list after new node insertion: \n");
+    while ( head != NULL )
+    {
+        printf ("%i\n", head->data);
+        head = head->next;
+    }
+    printf("done!\n");
+
+
+    head = &n2;
+    // create  a new node
+    node *n1 = malloc(sizeof(node));
+    // initialize new node
+    n1->data = 100;
+    n1->next = NULL;
+
+    // insert new node
+    insert_entry(head, n1);
+
+    // print new linked list
+    printf("Printing linked list after new node insertion: \n");
+    while ( head != NULL )
+    {
+        printf ("%i\n", head->data);
+        head = head->next;
+    }
+    printf("done!\n");
+    
     return 0;
 }
 
-void insert_entry(struct node *new)
+void insert_entry(node *head, struct node *new)
 {
     // traverse list with two pointers
     node *prev = NULL;
