@@ -14,9 +14,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
-//#define SIZE 10
 
 // structure for linked list - singly-linked
 typedef struct node
@@ -74,7 +71,6 @@ int main(void)
     }
     printf("done!\n");
 
-
     head = &n2;
     // create  a new node
     node *n1 = malloc(sizeof(node));
@@ -97,6 +93,13 @@ int main(void)
     return 0;
 }
 
+/***
+ * Function to append new previously constructed node to the end of a singly
+ * linked list by traversing the list with two pointers. If the list is empty, 
+ * it becomes the root/ head, else it inserts at end. Function accepts two 
+ * arguments: 1) node *head, which is the root/ head of the singly linked list. 
+ * 2) struct node *new, which is the previously constructed node. 
+ **/
 void insert_entry(node *head, struct node *new)
 {
     // traverse list with two pointers
@@ -117,5 +120,4 @@ void insert_entry(node *head, struct node *new)
     {
         prev->next = new;
     }
-
 }
