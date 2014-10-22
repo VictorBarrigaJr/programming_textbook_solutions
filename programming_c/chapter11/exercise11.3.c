@@ -23,19 +23,16 @@ typedef struct node
     struct node *next;
 } node;
 
-//node *head = NULL;
+node *head = NULL;
 
-void insert_entry(node *head, struct node *new);
+void insert_entry(node **head, node **new);
 
 int main(void)
 {
     // linked list
     node n2, n4, n6;
     
-    node head;
-    
-    head->data = &n2;
-    //head.next = &n2;
+    node *head = &n2;
 
     n2.data = 200;
     n2.next = &n4;
@@ -57,10 +54,10 @@ int main(void)
     
     head = &n2;
     // create  a new node
-    node n5;
+    node *n5 = malloc(sizeof(node));
     // initialize new node
-    n5.data = 500;
-    n.next = NULL;
+    n5->data = 500;
+    n5->next = NULL;
 
     // insert new node
     insert_entry(&head, &n5);
@@ -85,7 +82,7 @@ int main(void)
     n1->next = NULL;
 
     // insert new node
-    insert_entry(head, n1);
+    insert_entry(&head, &n1);
 
     // print new linked list
     printf("Printing linked list after new node insertion: \n");
@@ -99,7 +96,7 @@ int main(void)
     return 0;
 }
 
-void insert_entry(node *head, struct node *new)
+void insert_entry(node **head, node **new)
 {
     new->next = head;
     head = new;
