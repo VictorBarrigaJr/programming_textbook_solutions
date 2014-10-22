@@ -25,7 +25,7 @@ typedef struct node
 
 node *head = NULL;
 
-void insert_entry(node **head, node **new);
+void insert_entry(node **head, node *new);
 
 int main(void)
 {
@@ -60,7 +60,7 @@ int main(void)
     n5->next = NULL;
 
     // insert new node
-    insert_entry(&head, &n5);
+    insert_entry(&head, n5);
 
     // print new linked list
     printf("Printing linked list after new node insertion: \n");
@@ -72,7 +72,7 @@ int main(void)
     }
     printf("done!\n");
     
-    head = &n2;
+    head = n5;
     
 
     // create  a new node
@@ -82,7 +82,7 @@ int main(void)
     n1->next = NULL;
 
     // insert new node
-    insert_entry(&head, &n1);
+    insert_entry(&head, n1);
 
     // print new linked list
     printf("Printing linked list after new node insertion: \n");
@@ -96,8 +96,8 @@ int main(void)
     return 0;
 }
 
-void insert_entry(node **head, node **new)
+void insert_entry(node **head, node *new)
 {
-    new->next = head;
-    head = new;
+    new->next = *head;
+    *head = new;
 }
