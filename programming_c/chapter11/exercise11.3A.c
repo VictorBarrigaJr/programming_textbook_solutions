@@ -116,7 +116,9 @@ void print_list(node_t *node)
 }
 
 /***
- *
+ * function prepends node to the beginning of a linked list. function accepts
+ * two arguments: 1) node_t **head, which is a pointer to the root node, 2)
+ * int val, which is the new data int for the new node to hold.
  **/
 void new_entry_prepend(node_t **head, int val)
 {
