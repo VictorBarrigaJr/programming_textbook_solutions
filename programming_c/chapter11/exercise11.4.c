@@ -19,7 +19,6 @@
 
 #define SIZE 10
 
-
 /***
  * Linked list typedef
  **/
@@ -41,9 +40,25 @@ void remove_entry(node_t **head, int val);
 int main(void)
 {
     // create list
+    printf("Appending int's 0-%i onto the list... ", SIZE - 1);
+    for (int i = 0; i < SIZE; i++) 
+    {
+        new_entry_append(&head, i);
+    }
+    printf("done!\n");
+
     // print out list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
+
     // remove entry
+    remove_entry(&head, 5);
+
     // print out list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
 
     return 0;
 }
@@ -71,9 +86,9 @@ void print_list(node_t *node)
 void new_entry_prepend(node_t **head, int val)
 {
     // create new node
-    node_t *new = malloc(sizeof(node_t);
+    node_t *new = malloc(sizeof(node_t));
 
-    if (new = NULL)
+    if (new == NULL)
     {
         printf("Error -- out of memory\n");
         exit(1);
@@ -140,10 +155,34 @@ void remove_entry(node_t **head, int val)
     entries_removed = 0;
     
     // iterate over the entries in the list
-    // if current->val matches val, val needs to be removed, unlink
-    // this is the first entry in the list
-    // point to previous entry at its new location
-
-    
+    while (current != NULL) 
+    {
+        next = current->next;
+        
+        if (current->val == val)
+        {
+            // if current->val matches val, val needs to be removed, unlink
+            if (current->prev == NULL)
+            {
+                // this is the first entry in the list
+                *head = current->next;
+            }
+            else
+            {
+                // point to previous entry at its new location
+                current->prev->next = current->next;
+            }
+        
+            if (current->next != NULL)
+            {
+                current->next->prev = current->prev;
+            }
+            // free entry
+            free(current);
+            ++entries_removed;
+        }
+        // advance to the next list entry
+        current = next;
+    }    
 }
 
