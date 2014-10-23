@@ -80,16 +80,46 @@ void new_entry_prepend(node_t **head, int val)
     if (*head != NULL)
     {
         (*head)->prev = new;
-    }
-       
-    
+    }    
 }
 
 /***
- *
+ * Function appends new node to linked list. Function accepts two arguments: 1)
+ * node_t **head, which is a pointer to the root node, beginning of list. 2) int
+ * val, which is an int value to append to the current list.
  **/
 void new_entry_append(node_t **head, int val)
 {
+    // create new node
+    node_t *new = malloc(sizeof(node_t));
+    if (new == NULL)
+    {
+        printf("Error -- out of memory\n");
+        exit(1);
+    }
 
+    // iniitalize new node
+    new->val = val;
+    new->next = NULL;
+
+    // if list is empty attach to start
+    if (*head == NULL)
+    {
+        // create start of list
+        *head = new;
+        new->prev = NULL;
+    }
+    // find end of list, append to last node
+    else
+    {
+        node_t *current = *head;
+        while (current->next != NULL)
+        {
+            current = current->next;
+        }
+        // append to the end of the list
+        new->prev = current;
+        current->next = new;
+    }
 }
 
