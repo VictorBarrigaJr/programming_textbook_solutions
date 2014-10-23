@@ -36,6 +36,7 @@ node_t *head = NULL;
 void print_list(node_t *node);
 void new_entry_prepend(node_t **head, int val);
 void new_entry_append(node_t **head, int val);
+void remove_entry(node_t **head, int val);
 
 int main(void)
 {
@@ -121,5 +122,13 @@ void new_entry_append(node_t **head, int val)
         new->prev = current;
         current->next = new;
     }
+}
+
+/***
+ *
+ **/
+void remove_entry(node_t **head, int val)
+{
+
 }
 
