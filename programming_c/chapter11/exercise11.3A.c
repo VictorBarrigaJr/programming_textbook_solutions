@@ -30,7 +30,7 @@ node_t *head = NULL;
 
 void print_list(node_t *node);
 void new_entry_append(node_t **head, int val);
-void insert_entry_prepend(node_t **head, int val);
+void new_entry_prepend(node_t **head, int val);
 
 int main(int argc, char *argv[])
 {
@@ -42,8 +42,21 @@ int main(int argc, char *argv[])
     }
     printf("done!\n");
 
-    
     // print out list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("\n");
+
+    // prepend into list
+    printf("Prepend new entry 25...\n");
+    new_entry_prepend(&head, 25);
+    printf("done!\n");
+
+    // print out list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("\n");
+    
     return 0;
 }
 
@@ -105,7 +118,7 @@ void print_list(node_t *node)
 /***
  *
  **/
-void insert_entry_prepend(node_t **head, int val)
+void new_entry_prepend(node_t **head, int val)
 {
     // create new list entry
     node_t *new = malloc(sizeof(node_t));
@@ -122,6 +135,7 @@ void insert_entry_prepend(node_t **head, int val)
     {
         (*head)->prev = new;
     }
-    
-    
+    new->prev = NULL;
+    new->next = *head;
+    *head = new    
 }
