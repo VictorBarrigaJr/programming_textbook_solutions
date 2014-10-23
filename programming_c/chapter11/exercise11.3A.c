@@ -137,5 +137,5 @@ void new_entry_prepend(node_t **head, int val)
     }
     new->prev = NULL;
     new->next = *head;
-    *head = new    
+    *head = new;    
 }
