@@ -40,7 +40,11 @@ void remove_entry(node_t **head, int val);
 
 int main(void)
 {
-    
+    // create list
+    // print out list
+    // remove entry
+    // print out list
+
     return 0;
 }
 
@@ -125,7 +129,7 @@ void new_entry_append(node_t **head, int val)
 }
 
 /***
- *
+ * 
  **/
 void remove_entry(node_t **head, int val)
 {
