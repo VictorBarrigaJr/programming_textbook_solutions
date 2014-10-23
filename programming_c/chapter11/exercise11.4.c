@@ -129,10 +129,21 @@ void new_entry_append(node_t **head, int val)
 }
 
 /***
- * 
+ * Function removes an entry from a linked list.
  **/
 void remove_entry(node_t **head, int val)
 {
+    unsigned int entries_removed;
+    node_t *current = *head;
+    node_t *next;
+    
+    entries_removed = 0;
+    
+    // iterate over the entries in the list
+    // if current->val matches val, val needs to be removed, unlink
+    // this is the first entry in the list
+    // point to previous entry at its new location
 
+    
 }
 
