@@ -72,7 +72,11 @@ void print_list(node_t *head)
         current = current->next;
     }
 }
-
+/***
+ * function appends new node to linked list. fuction accepts two arguments
+ * 1) node_t **head which is pointer to the beggining of a linked list. 2)
+ * 2) int val, which is an int value to append to the currentl list.
+ **/
 void new_entry_append(node_t **head, int val)
 {    
     // create new list entry
