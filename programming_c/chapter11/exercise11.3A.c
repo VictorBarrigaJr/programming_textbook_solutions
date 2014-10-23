@@ -29,14 +29,62 @@ typedef struct node
 node_t *head = NULL;
 
 void print_list(node_t *node);
+void new_entry_append(node_t **head, int val);
 void insert_entry_prepend(node_t **head, int val);
-
 
 int main(int argc, char *argv[])
 {
     // create list
+    printf("Apending int's 0-%i onto the list... ", SIZE - 1);
+    for (int i = 0; i < SIZE; i++) 
+    {
+        new_entry_append(&head, i);
+    }
+    printf("done!\n");
+
+    
     // print out list
     return 0;
+}
+
+/***
+ * function appends new node to linked list. fuction accepts two arguments
+ * 1) node_t **head which is pointer to the beggining of a linked list. 2)
+ * 2) int val, which is an int value to append to the currentl list.
+ **/
+void new_entry_append(node_t **head, int val)
+{    
+    // create new list entry
+    node_t *new = malloc(sizeof(node_t));
+    if (new == NULL)
+    {
+        printf("Error -- out of memory\n");
+        exit(1);
+    }
+    // initialize new entry
+    new->val = val;
+    new->next = NULL;
+
+    // if list is empty
+    if (*head == NULL)
+    {
+        // create start of list
+        *head = new;
+        new->prev = NULL;        
+    }
+    else
+    {
+        // find end of list
+        //for (node_t *rover = head; rover->next != NULL; rover = rover->next);
+        node_t *current = *head;
+        while (current->next != NULL) 
+        {
+            current = current->next;
+        }
+        // append to the end of the list
+        new->prev = current;//rover;
+        current->next = new;//rover->next = new;
+    }
 }
 
 /***
@@ -59,5 +107,21 @@ void print_list(node_t *node)
  **/
 void insert_entry_prepend(node_t **head, int val)
 {
+    // create new list entry
+    node_t *new = malloc(sizeof(node_t));
+    if (new == NULL)
+    {
+        printf("Error -- out of memory\n");
+        exit(1);
+    }
+    
+    new->val = val;
 
+    // insert into the start of list
+    if (*head != NULL)
+    {
+        (*head)->prev = new;
+    }
+    
+    
 }
