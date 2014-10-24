@@ -53,9 +53,11 @@ int main(void)
     printf("done!\n");
 
     // remove entry
-    printf("Removing int 3 and 7 from linked list...");
+    printf("Removing int 0, 3, 7 and 9 from linked list... ");
+    remove_entry(&head, 0);
     remove_entry(&head, 3);
     remove_entry(&head, 7);
+    remove_entry(&head, 9);
     printf("done!\n");
 
     // print out list
