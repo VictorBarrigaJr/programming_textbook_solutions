@@ -149,7 +149,9 @@ void new_entry_append(node_t **head, int val)
 }
 
 /***
- * Function removes an entry from a linked list.
+ * Function removes an entry from a linked list. Function accepts two arguments:
+ * 1) a pointer to the root/ head of a linked list 2) an int value to be removed
+ * from the linked list.
  **/
 void remove_entry(node_t **head, int val)
 {
