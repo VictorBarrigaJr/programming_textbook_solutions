@@ -53,7 +53,10 @@ int main(void)
     printf("done!\n");
 
     // remove entry
-    remove_entry(&head, 5);
+    printf("Removing int 3 and 7 from linked list...");
+    remove_entry(&head, 3);
+    remove_entry(&head, 7);
+    printf("done!\n");
 
     // print out list
     printf("Your list contains: \n");
