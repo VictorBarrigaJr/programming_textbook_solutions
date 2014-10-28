@@ -47,11 +47,18 @@ int main(int argc, char *argv[])
 }
 
 /***
- * Function prints doubly linked list.
+ * Function prints doubly linked list starting at the root node. Function
+ * accepts one argument: 1) a pointer type node to root pointer.
  **/
 void print_list(node *head)
 {
+    node *current = head;
 
+    while (current != NULL) 
+    {
+        printf("%i\n", current->val);
+        current = current->next;
+    }
 }
 
 /***
