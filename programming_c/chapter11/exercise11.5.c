@@ -172,4 +172,3 @@ void remove_entry(node **head, int val)
         current = next;
     }
 }
-
