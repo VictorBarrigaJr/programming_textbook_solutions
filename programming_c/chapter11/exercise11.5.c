@@ -140,6 +140,36 @@ void new_entry_append(node **head, int val)
  **/
 void remove_entry(node **head, int val)
 {
+    node *current = *head;
+    node *next;
 
+    // iterate over the entries in the list
+    while (current != NULL) 
+    {
+        next = current->next;
+
+         // if current->val matches val, val needs to be removed, unlink
+        if (current->val == val)
+        {
+            // this is the first enty in the list
+            if (current->prev == NULL)
+            {
+                *head = current->next;
+            }
+            // point to previous entry at its new location
+            else
+            {
+                current->prev->next = current->next;
+            }
+            if (current->next != NULL)
+            {
+                current->next->prev = current->next;
+            }
+            // free entry
+            free(current);
+        }
+        // advance to the next list entry
+        current = next;
+    }
 }
 
