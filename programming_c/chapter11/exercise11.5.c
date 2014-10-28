@@ -62,7 +62,9 @@ void print_list(node *head)
 }
 
 /***
- * Function prepends entry onto a doubly linked list
+ * Function prepends entry onto a doubly linked list. Function accepts two 
+ * arguments: 1) a pointer type node to root pointer, 2) a int type indicating
+ * the new data to be inserted into the new node.
  **/
 void new_entry_prepend(node **head, int val)
 {
@@ -95,7 +97,40 @@ void new_entry_prepend(node **head, int val)
  **/
 void new_entry_append(node **head, int val)
 {
+    // create new node
+    node *new = malloc(sizeof(node));
+    
+    if (new == NULL)
+    {
+        printf("Error -- out of memory\n");
+        exit(1);
+    }
 
+    // initialize new node
+    new->val = val;
+    new->next = NULL;
+
+    // if list is empty attach to start
+    if (*head == NULL)
+    {
+        // create start of list
+        *head = new;
+        new->prev = NULL;
+    }
+    // else find end of list, append to last node
+    else
+    {
+        node *current = *head;
+        
+        while (current->next != NULL) 
+        {
+            current = current->next;
+        }
+
+        // append to the end of the list
+        new->prev = current;
+        current->next = new;
+    }
 }
 
 /***
