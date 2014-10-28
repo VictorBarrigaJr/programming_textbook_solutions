@@ -66,7 +66,28 @@ void print_list(node *head)
  **/
 void new_entry_prepend(node **head, int val)
 {
+    // create new node
+    node *new = malloc(sizeof(node));
 
+    if (new == NULL)
+    {
+        printf("Error -- out of memory\n");
+        exit(1);
+    }
+
+    // initialize new node
+    new->val = val;
+
+    // insert into the start of the list
+    if (*head != NULL)
+    {
+        (*head)->prev = new;
+    }
+    
+    // swap head with new
+    new->prev = NULL;
+    new->next = *head;
+    *head = new;
 }
 
 /***
