@@ -1,4 +1,4 @@
-/*******************************************************************************
+ /*******************************************************************************
  * Exercise 11.5 - from Programming in C
  * File:    exercise11.5.c
  *
@@ -39,6 +39,7 @@ void print_list(node *head);
 void new_entry_prepend(node **head, int val);
 void new_entry_append(node **head, int val);
 void remove_entry(node **head, int val);
+void reverse_list(node **head);
 
 int main(int argc, char *argv[])
 {
@@ -173,4 +174,14 @@ void remove_entry(node **head, int val)
         // advance to the next list entry
         current = next;
     }
+}
+
+/***
+ * Function reverses a doubly linked list.
+ **/
+
+void reverse_list(node **head)
+{
+   
+
 }
