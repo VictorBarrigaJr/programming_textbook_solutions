@@ -56,14 +56,15 @@ int main(int argc, char *argv[])
     printf("done!\n");
     
     // create list - prepend
-    printf("Prepending int's 20 onto the doubly linked list...");
-    new_entry_prepend(&head, SIZE * 2);
+    printf("Prepending int 20 onto the doubly linked list...");
+    new_entry_prepend(&head, 20);
     printf("done!\n");
     // print list
     printf("Your list contains: \n");
     print_list(head);
     printf("done!\n");
     
+    /*
     // remove enties
     printf("Removing int 20, 4 and 9 from list... ");
     remove_entry(&head, 20);
@@ -74,7 +75,8 @@ int main(int argc, char *argv[])
     printf("Your list contains: \n");
     print_list(head);
     printf("done!\n");
-    
+    */
+
     // reverse list
     printf("Reversing doubly linked list to print reversed...");
     reverse_list(&head);
