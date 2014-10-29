@@ -43,6 +43,46 @@ void reverse_list(node **head);
 
 int main(int argc, char *argv[])
 {
+    // create list - append
+    printf("Appending int's 0-%i onto the doubly linked list...", SIZE - 1);
+    for (i = 0; i < SIZE; i++) 
+    {
+        new_entry_append(&head, i);
+    }
+    printf("done!\n");
+    // print list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
+    
+    // create list - prepend
+    printf("Prepending int's 20 onto the doubly linked list...", SIZE * 2);
+    new_entry_prepend(&head, SIZE * 2)
+    printf("done!\n");
+    // print list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
+    
+    // remove enties
+    printf("Removing int 20, 4 and 9 from list... ");
+    remove_entry(&head, 20);
+    remove_entry(&head, 4);
+    remove_entry(&head, 9);
+    printf("done!\n");
+    // print list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
+    
+    // reverse list
+    printf("Reversing doubly linked list to print reversed...");
+    reverse_list(&head);
+    printf("done!\n");
+    // print list
+    printf("Your list contains: \n");
+    print_list(head);
+    printf("done!\n");
     
     return 0;
 }
