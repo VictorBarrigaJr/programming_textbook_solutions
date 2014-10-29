@@ -136,7 +136,9 @@ void new_entry_append(node **head, int val)
 }
 
 /***
- * Function removes entry based on value from a doubly linked list
+ * Function removes entry based on value from a doubly linked list. Will remove
+ * all instances of int val data type. Function accepts two arguments: 1) a 
+ *struct node pointer to head, 2) an int value to remove.
  **/
 void remove_entry(node **head, int val)
 {
