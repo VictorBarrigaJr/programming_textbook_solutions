@@ -97,9 +97,10 @@ void print_list(node *head)
 
     while (current != NULL) 
     {
-        printf("%i\n", current->val);
+        printf("-> %i ", current->val);
         current = current->next;
     }
+    printf("/n");
 }
 
 /***
