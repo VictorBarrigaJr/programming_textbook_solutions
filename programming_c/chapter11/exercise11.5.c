@@ -177,7 +177,8 @@ void remove_entry(node **head, int val)
 }
 
 /***
- * Function reverses a doubly linked list.
+ * Function reverses a doubly linked list. Function accepts one argument: 1)
+ * a pointer node to head.
  **/
 
 void reverse_list(node **head)
