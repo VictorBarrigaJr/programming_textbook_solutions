@@ -100,7 +100,7 @@ void print_list(node *head)
         printf("-> %i ", current->val);
         current = current->next;
     }
-    printf("/n");
+    printf("\n");
 }
 
 /***
