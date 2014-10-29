@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 10;
+#define SIZE 10
 
 /***
  * Doubly linked list typedef
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 {
     // create list - append
     printf("Appending int's 0-%i onto the doubly linked list...", SIZE - 1);
-    for (i = 0; i < SIZE; i++) 
+    for (int i = 0; i < SIZE; i++) 
     {
         new_entry_append(&head, i);
     }
@@ -56,8 +56,8 @@ int main(int argc, char *argv[])
     printf("done!\n");
     
     // create list - prepend
-    printf("Prepending int's 20 onto the doubly linked list...", SIZE * 2);
-    new_entry_prepend(&head, SIZE * 2)
+    printf("Prepending int's 20 onto the doubly linked list...");
+    new_entry_prepend(&head, SIZE * 2);
     printf("done!\n");
     // print list
     printf("Your list contains: \n");
@@ -224,7 +224,7 @@ void remove_entry(node **head, int val)
 void reverse_list(node **head)
 {
     node *temp = NULL;
-    node *current = head;
+    node *current = *head;
 
     // swap next and prev for all nodes of doubly linked list
     while (current != NULL) 
