@@ -182,6 +182,21 @@ void remove_entry(node **head, int val)
 
 void reverse_list(node **head)
 {
-   
+    node *temp = NULL;
+    node *current = head;
 
+    // swap next and prev for all nodes of doubly linked list
+    while (current != NULL) 
+    {
+        temp = current->prev;
+        current->prev = current->next;
+        current->next = temp;
+        current = current->prev;
+    }
+
+    // before changing head, check if list is empty list or only one node list
+    if(temp != NULL)
+    {
+        *head = temp->prev;
+    }
 }
