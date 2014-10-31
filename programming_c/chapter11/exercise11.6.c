@@ -41,6 +41,7 @@ node *last = NULL;
  * helper function stubs
  **/
 void print_list(node *head);
+int length(void);
 void new_entry_prepend(node **head, int val);
 void new_entry_append(node **head, int val);
 void new_entry_middle(node **head, int val, int after);
@@ -70,6 +71,14 @@ void print_list(node *head)
 }
 
 /***
+ * Function returns the length of a linked list
+ **/
+int length(void)
+{
+    // traverse list
+    // count nodes ++
+    // return length
+}
  * Function to insert new node at beginning
  **/
 void new_entry_prepend(node **head, int val)
