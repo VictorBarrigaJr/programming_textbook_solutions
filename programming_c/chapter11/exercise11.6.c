@@ -59,7 +59,13 @@ int main(int argc, char *argv[])
  **/
 void print_list(node *head)
 {
-
+    node *current = head;
+    
+    while (current != NULL) 
+    {
+        printf("-> %i", current->val);
+        current = current->next;
+    }
 }
 
 /***
