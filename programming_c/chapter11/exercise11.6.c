@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+// ints for list
 #define SIZE 10
 
 /***
@@ -41,7 +42,8 @@ node *last = NULL;
 /***
  * helper function stubs
  **/
-void print_list(node *head);
+void print_list_forward(node *head);
+void print_list_reverse(node *head);
 int list_length(void);
 bool list_contains(int val);
 void new_entry_prepend(node **head, int val);
@@ -58,10 +60,10 @@ int main(int argc, char *argv[])
 }
 
 /***
- * Function to display list to console. Function accepts one argument: 1) a
- * pointer type root pointer.
+ * Function to display list to console forwrd first-> last. Function accepts one
+ * argument: 1) a pointer type root pointer.
  **/
-void print_list(node *head)
+void print_list_forward(node *head)
 {
     node *current = head;
     
@@ -73,6 +75,12 @@ void print_list(node *head)
 }
 
 /***
+ * Function to display list to console in reverse last->first.
+ **/
+void print_list_reverse(node *last)
+{
+   
+}
  * Function returns the length of a linked list
  **/
 int list_length(void)
