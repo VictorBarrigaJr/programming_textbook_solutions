@@ -74,7 +74,9 @@ void print_list(node *head)
  **/
 void new_entry_prepend(node **head, int val)
 {
-
+    // create new node
+    // insert into start of the list
+    // swap head with new
 }
 
 /***
@@ -82,7 +84,11 @@ void new_entry_prepend(node **head, int val)
  **/
 void new_entry_append(node **head, int val)
 {
-
+    // create new node
+    // initialize new node
+    // if list is empty attach to start
+    // else find end of list, append to last node
+    // append to the end of the list
 }
 
 /***
@@ -90,7 +96,10 @@ void new_entry_append(node **head, int val)
  **/
 void new_entry_middle(node **head, int val, int after)
 {
-
+    // initialize temp node malloc
+    // if head = null, assign val, and next = null
+    // else while temp->data != afteter temp = tem -> next
+    // swap variables
 }
 
 /***
@@ -98,7 +107,12 @@ void new_entry_middle(node **head, int val, int after)
  **/
 void remove_entry_data(node **head, int val)
 {
-
+    // iterate over the entries in the list
+    // if current->val matches val, val needs to be removed, unlink
+    // this is the first entry in the list
+    // point to previous entry at its new location
+    // free entry
+    // advance to the next list entry
 }
 
 /***
@@ -106,7 +120,13 @@ void remove_entry_data(node **head, int val)
  **/
 void remove_entry_node(node **head, int val)
 {
-
+    // if list is empty, or entry is NULL, always fail
+    // if entry is the first in the list
+    // unlink the first entry and update the starting pointer
+    // update the second entry prev pointer, if there is a second entry
+    // else this is not the fiest, prev entry exist, update next pointer to new
+    // if entry follows, update prev pointer to the new value
+    // fee the list entry
 }
 
 /***
@@ -114,5 +134,6 @@ void remove_entry_node(node **head, int val)
  **/
 void reverse_list(node **head)
 {
-
+    // swap next and prev for all nodes of doubly linked list
+    // before changing head, check if list is empty list or only one node list
 }
