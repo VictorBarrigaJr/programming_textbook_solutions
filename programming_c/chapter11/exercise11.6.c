@@ -82,6 +82,7 @@ void print_list_reverse(node *last)
     // while current->prev !=NULL
     // print list
 }
+
 /***
  * Function returns the length of a linked list
  **/
