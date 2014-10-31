@@ -79,8 +79,10 @@ void print_list_forward(node *head)
  **/
 void print_list_reverse(node *last)
 {
-   
+    // while current->prev !=NULL
+    // print list
 }
+/***
  * Function returns the length of a linked list
  **/
 int list_length(void)
