@@ -42,8 +42,8 @@ node *last = NULL;
  * helper function stubs
  **/
 void print_list(node *head);
-int length(void);
-bool contains(int val);
+int list_length(void);
+bool list_contains(int val);
 void new_entry_prepend(node **head, int val);
 void new_entry_append(node **head, int val);
 void new_entry_middle(node **head, int val, int after);
@@ -75,7 +75,7 @@ void print_list(node *head)
 /***
  * Function returns the length of a linked list
  **/
-int length(void)
+int list_length(void)
 {
     // traverse list
     // count nodes ++
@@ -85,7 +85,7 @@ int length(void)
 /***
  * Function returns true if the node in the linked list contains int val.
  **/
-bool contains(int val)
+bool list_contains(int val)
 {
     // traverse list
     // check each node
