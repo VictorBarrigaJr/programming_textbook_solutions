@@ -16,6 +16,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define SIZE 10
 
@@ -42,6 +43,7 @@ node *last = NULL;
  **/
 void print_list(node *head);
 int length(void);
+bool contains(int val);
 void new_entry_prepend(node **head, int val);
 void new_entry_append(node **head, int val);
 void new_entry_middle(node **head, int val, int after);
@@ -79,6 +81,19 @@ int length(void)
     // count nodes ++
     // return length
 }
+
+/***
+ * Function returns true if the node in the linked list contains int val.
+ **/
+bool contains(int val)
+{
+    // traverse list
+    // check each node
+    // return true if found
+    // return false not found
+}
+
+/***
  * Function to insert new node at beginning
  **/
 void new_entry_prepend(node **head, int val)
