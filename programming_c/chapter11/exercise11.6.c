@@ -18,6 +18,7 @@
 #include <stdlib.h>
 
 #define SIZE 10
+
 /***
  * typedef for doubly linked list.
  **/
@@ -34,7 +35,7 @@ typedef struct node
 // pointer to head
 node *head = NULL;
 // pointer to end of list
-node *end = NULL;
+node *last = NULL;
 
 /***
  * helper function stubs
@@ -108,4 +109,3 @@ void reverse_list(node **head)
 {
 
 }
-
