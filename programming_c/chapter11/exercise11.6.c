@@ -55,7 +55,8 @@ int main(int argc, char *argv[])
 }
 
 /***
- * Function to display list to console.
+ * Function to display list to console. Function accepts one argument: 1) a
+ * pointer type root pointer.
  **/
 void print_list(node *head)
 {
